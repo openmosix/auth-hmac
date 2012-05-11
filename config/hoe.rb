@@ -4,6 +4,7 @@ AUTHOR = ['Sean Geoghegan', 'ascarter']  # can also be an array of Authors
 EMAIL = "seangeo@gmail.com"
 DESCRIPTION = "A gem providing HMAC based authentication for HTTP"
 GEM_NAME = 'auth-hmac' # what ppl will type to install your gem
+VERSION = '1.1.2'
 RUBYFORGE_PROJECT = 'auth-hmac' # The unix name for your project
 HOMEPATH = "http://#{RUBYFORGE_PROJECT}.rubyforge.org"
 DOWNLOAD_PATH = "http://rubyforge.org/projects/#{RUBYFORGE_PROJECT}"
@@ -50,16 +51,16 @@ end
 
 # Generate all the Rake tasks
 # Run 'rake -T' to see list of generated tasks (from gem root directory)
-$hoe = Hoe.new(GEM_NAME, VERS) do |p|
+$hoe = Hoe.spec(GEM_NAME) do |p|
   p.author = AUTHOR
   p.email = EMAIL
   p.description = DESCRIPTION
   p.summary = DESCRIPTION
-  p.url = HOMEPATH
+  p.urls = [HOMEPATH]
   p.rubyforge_name = RUBYFORGE_PROJECT if RUBYFORGE_PROJECT
   p.test_globs = ["test/**/test_*.rb"]
   p.clean_globs |= ['**/.*.sw?', '*.gem', '.config', '**/.DS_Store']  #An array of file patterns to delete on clean.
-
+  p.version = VERSION
   # == Optional
   p.changes = p.paragraphs_of("History.txt", 0..1).join("\n\n")
   #p.extra_deps = EXTRA_DEPENDENCIES
