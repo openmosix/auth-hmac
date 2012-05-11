@@ -2,6 +2,10 @@
 
 == What is it?
 
+This is a fork of auth-hmac to make it compatible with Rails 3.2
+
+
+
 auth-hmac is a Ruby implementation of HMAC[http://en.wikipedia.org/wiki/HMAC] based authentication of HTTP requests.
 
 HMAC authentication involves a client and server having a shared secret key.  When sending the request the client, signs the request using the secret key. This involves building a canonical representation of the request and then generating a HMAC of the request using the secret. The generated HMAC is then sent as part of the request.
